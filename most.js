@@ -26,6 +26,30 @@ function main() {
                 "Timer.listOnTimeout"
             ]
         });
+
+    let observer = undefined;
+    const toy = {
+        [Symbol.observable]() {
+            return this;
+        },
+        subscribe(o) {
+            observer = o;
+        }
+    };
+
+    most.from(toy)
+        .observe(function anon() {
+            log('most.from(toy); observer.next()');
+            log(stackTrace());
+            [
+                "anon",
+                "TapSink.event",
+                "SubscriberSink.next",
+                "main"
+            ]
+        });
+
+    observer.next();
 };
 
 main();
