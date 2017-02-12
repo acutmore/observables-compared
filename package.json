@@ -8,5 +8,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "rx": "^4.1.0"
   }
 }
