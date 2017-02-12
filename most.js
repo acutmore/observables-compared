@@ -1,6 +1,6 @@
 const most = require('most');
-const stackTrace = require('./stacktrace');
-const log = require('./log');
+const stackTrace = require('./utils/stacktrace');
+const log = require('./utils/log');
 
 function main() {
     'use strict';
